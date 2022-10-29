@@ -2,6 +2,10 @@ use anyhow::{Context, Result};
 use std::path::Path;
 use tokio::fs::{copy, read_dir, DirEntry};
 
+/*
+* Program to copy all files from a source to a destination in an async manner.
+*/
+
 async fn copy_file(src_dir_entry: DirEntry, dest_dir: impl AsRef<Path>) -> Result<()> {
     let dest_path = dest_dir
         .as_ref()
